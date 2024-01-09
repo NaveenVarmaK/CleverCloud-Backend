@@ -13,6 +13,8 @@ RUN mvn clean package -DskipTests
 # list files here
 RUN echo "ls -la /home/app/target"
 
+EXPOSE 8080
+
 # start the jar file
 CMD ["java", "-Xmx11g","-jar", "/home/app/target/parking-0.0.1-SNAPSHOT.jar"]
 
