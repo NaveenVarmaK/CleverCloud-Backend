@@ -7,6 +7,7 @@ import com.example.parking.repositories.UserRepository;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.http.HttpStatus;
@@ -30,6 +31,11 @@ public class UserController {
 
     @Autowired
     public BookingRepository bookingRepository;
+
+    @ModelAttribute
+    public void setVaryResponseHeader(HttpServletResponse response) {
+        response.setHeader("Access-Control-Allow-Origin", "*");
+    }
 
     @GetMapping("/users")
     public ResponseEntity<List<User>> getUsers() {
