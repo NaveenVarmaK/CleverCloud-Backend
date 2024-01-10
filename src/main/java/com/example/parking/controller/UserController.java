@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Tag(name = "User", description = "User management APIs")
-@CrossOrigin(origins = "*")
+//@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api")
 @EntityScan(basePackageClasses = {User.class})
