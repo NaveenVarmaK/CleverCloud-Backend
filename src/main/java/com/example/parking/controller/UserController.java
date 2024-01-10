@@ -35,10 +35,10 @@ public class UserController {
     @ModelAttribute
     public void setVaryResponseHeader(HttpServletResponse response) {
         // remove vary header if present
-        response.setHeader("Vary", "");
+        response.setHeader("Vary", "Origin,Access-Control-Request-Method,Access-Control-Request-Headers ");
         response.setHeader("Access-Control-Allow-Origin", "*");
-        response.setHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, PATCH, OPTIONS");
-        response.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+//        response.setHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, PATCH, OPTIONS");
+//        response.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
     }
 
     @GetMapping("/users")
